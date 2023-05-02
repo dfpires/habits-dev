@@ -12,7 +12,7 @@ const weekDays = [
   // vetor de datas
   const summaryDates = generateDatesFromYearBeginning()
  // tamanho mínimo de data
-  const minimumSummaryDatesSize = 18 * 7 // 18 semanas
+  const minimumSummaryDatesSize = 20 * 7 // 18 semanas
   // qtde de dias para completar
 const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
 
