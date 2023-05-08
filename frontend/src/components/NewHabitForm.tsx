@@ -13,15 +13,17 @@ export function NewHabitForm() {
       ]
 
       const [title, setTitle] = useState('')
-      const [weekDays, setWeekDays] = useState<number[]>([])
+      const [weekDays, setWeekDays] = useState<number[]>([]) // [0, 2, 4]
     
 
-      function handleToggleWeekDay(weekDay: number) {
+      function handleToggleWeekDay(weekDay: number) { // [2, 3, 5, 6]
         if (weekDays.includes(weekDay)) {
+            [2, 3, 6]
           const weekDaysWithRemovedOne = weekDays.filter(day => day !== weekDay)
     
           setWeekDays(weekDaysWithRemovedOne)
         } else {
+            // 2, 3, 5, 6, 4
           const weekDaysWithAddedOne = [...weekDays, weekDay]
     
           setWeekDays(weekDaysWithAddedOne)
@@ -37,6 +39,8 @@ export function NewHabitForm() {
             placeholder="ex.: Exercícios, dormir bem, etc..."
             className="p-4 rounded-lg mt-3 bg-zinc-800 text-white"
             autoFocus
+            value={title}
+            onChange={event => setTitle(event.target.value)}
         />
         <label htmlFor="" className="font-semibold leading-tight mt-4">
             Qual a recorrência?
